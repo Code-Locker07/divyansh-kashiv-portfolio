@@ -7,6 +7,8 @@ import React from "react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Moon, Sun, ArrowUp, Mail, Copy, Check, Github, Linkedin, Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import SmokyText from "@/components/SmokyText";
+import GalleryTunnel from "@/components/GalleryTunnel";
 
 // Image URLs from generate_image
 const HERO_PHONE = "/manus-storage/dark-hero-phone_5a583c9b.png";
@@ -312,9 +314,27 @@ function HeroSection() {
 
   return (
     <section id="hero" className="min-h-screen flex items-center pt-24 pb-16 relative overflow-hidden">
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,212,170,0.08)_0%,transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(0,212,170,0.04)_0%,transparent_50%)]" />
+      {/* Gallery Tunnel 3D Background */}
+      <div className="absolute inset-0 z-0">
+        <GalleryTunnel
+          background="#05080d"
+          lineColor="#0a1628"
+          lineOpacity={25}
+          colors={["#00d4aa", "#006666", "#004444", "#003333", "#002222"]}
+          grid={3}
+          speed={40}
+          boost={80}
+          fade={80}
+          label={true}
+          labelText="Explore ↓"
+        />
+        {/* Overlay to darken tunnel and blend with content */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background" />
+      </div>
+      {/* Subtle accent glows on top */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,212,170,0.06)_0%,transparent_50%)] z-[1]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(0,212,170,0.03)_0%,transparent_50%)] z-[1]" />
 
       <div className="container relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -324,9 +344,27 @@ function HeroSection() {
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               Java Developer · Android Explorer
             </div>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-foreground leading-[1.1]">
-              DIVYANSH<br />KASHIV
-            </h1>
+            {/* Smoky Text Title */}
+            <div style={{ minHeight: "1.3em", height: "auto" }}>
+              <SmokyText
+                text={`DIVYANSH
+KASHIV`}
+                font={{
+                  fontFamily: "'Outfit', sans-serif",
+                  fontWeight: 800,
+                  fontSize: "clamp(2.8rem, 7vw, 6.5rem)",
+                  textAlign: "left",
+                  lineHeight: 1.05,
+                  letterSpacing: "-0.02em",
+                }}
+                color="whitesmoke"
+                intensity={12}
+                position="bottomLeft"
+                animationMode="singleLine"
+                appearTrigger="default"
+                appearTransition={{ type: "tween", ease: "easeOut", duration: 2.2, delay: 0.3 }}
+              />
+            </div>
             <p className="text-lg md:text-xl text-muted-foreground font-body leading-relaxed max-w-xl">
               <span className="text-primary font-semibold">Android Developer</span> — writing code that actually compiles and ships.
             </p>
