@@ -171,6 +171,7 @@ interface SmokyTextProps {
   animationMode?: AnimationMode;
   className?: string;
   style?: React.CSSProperties;
+  loop?: boolean;
 }
 
 export default function SmokyText(props: SmokyTextProps) {
@@ -193,6 +194,7 @@ export default function SmokyText(props: SmokyTextProps) {
     animationMode = "singleLine",
     className = "",
     style,
+    loop = false,
   } = props;
 
   const kfEl = useRef<HTMLStyleElement | null>(null);
@@ -291,12 +293,18 @@ export default function SmokyText(props: SmokyTextProps) {
     later(
       () => {
         setPhase("appearing");
-        later(() => setPhase("visible"), ap.duration * 1000 + 200);
+        later(() => {
+          setPhase("visible");
+          // If looping, restart after a pause
+          if (loop) {
+            later(() => runAppear(), 1500);
+          }
+        }, ap.duration * 1000 + 200);
       },
       Math.max(ap.delay * 1000, 80)
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [loop]);
 
   useEffect(() => {
     clear();

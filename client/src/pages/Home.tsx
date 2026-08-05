@@ -314,28 +314,6 @@ function HeroSection() {
 
   return (
     <section id="hero" className="min-h-screen flex items-center pt-24 pb-16 relative overflow-hidden">
-      {/* Gallery Tunnel 3D Background */}
-      <div className="absolute inset-0 z-0">
-        <GalleryTunnel
-          background="#05080d"
-          lineColor="#0a1628"
-          lineOpacity={25}
-          colors={["#00d4aa", "#006666", "#004444", "#003333", "#002222"]}
-          grid={3}
-          speed={40}
-          boost={80}
-          fade={80}
-          label={true}
-          labelText="Explore ↓"
-        />
-        {/* Overlay to darken tunnel and blend with content */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background" />
-      </div>
-      {/* Subtle accent glows on top */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,212,170,0.06)_0%,transparent_50%)] z-[1]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(0,212,170,0.03)_0%,transparent_50%)] z-[1]" />
-
       <div className="container relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Left content */}
@@ -363,6 +341,7 @@ KASHIV`}
                 animationMode="singleLine"
                 appearTrigger="default"
                 appearTransition={{ type: "tween", ease: "easeOut", duration: 2.2, delay: 0.3 }}
+                loop={true}
               />
             </div>
             <p className="text-lg md:text-xl text-muted-foreground font-body leading-relaxed max-w-xl">
@@ -375,7 +354,7 @@ KASHIV`}
               <a href="#projects" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity">
                 View the experiments →
               </a>
-              <a href="https://divyansh3d-ds3gzplu.manus.space/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 glass rounded-lg font-medium text-foreground hover:border-primary/30 transition-all">
+              <a href="/manus-storage/Divyansh_Kashiv_Resume_v2(1)_34c0b987.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 glass rounded-lg font-medium text-foreground hover:border-primary/30 transition-all">
                 <span>📄</span> Resume
               </a>
               <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 glass rounded-lg font-medium text-foreground hover:border-primary/30 transition-all">
@@ -989,17 +968,35 @@ function ScrollToTop() {
 export default function Home() {
   return (
     <div className="min-h-screen bg-background pb-16 md:pb-0">
-      <Navbar />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <ExperienceSection />
-        <CredentialsSection />
-        <ContactSection />
-      </main>
-      <Footer />
+      {/* Full-page Gallery Tunnel 3D Background */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <GalleryTunnel
+          background="#05080d"
+          lineColor="#1a3a5c"
+          lineOpacity={55}
+          colors={["#00d4aa", "#0099cc", "#006699", "#00d4aa", "#004466"]}
+          grid={4}
+          speed={80}
+          boost={120}
+          fade={100}
+          label={false}
+        />
+        {/* Subtle overlay so content remains readable */}
+        <div className="absolute inset-0 bg-background/50" />
+      </div>
+      <div className="relative z-10">
+        <Navbar />
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <SkillsSection />
+          <ProjectsSection />
+          <ExperienceSection />
+          <CredentialsSection />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
       <ScrollToTop />
     </div>
   );
