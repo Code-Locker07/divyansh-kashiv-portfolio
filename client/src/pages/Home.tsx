@@ -118,14 +118,14 @@ const skillCategories = [
   ]},
   { name: "Android & Mobile", color: "rose", skills: [
     { code: "An", full: "Android", desc: "Mobile platform" },
-    { code: "Kt", full: "Kotlin", desc: "Android development" },
+    { code: "C", full: "C", desc: "Systems programming" },
     { code: "Rl", full: "Raylib", desc: "C++ game framework" },
     { code: "Ac", full: "ACM", desc: "Competitive programming" },
   ]},
 ];
 
 const otherTools = [
-  "Java/Kotlin", "PythonAnywhere", "H2/SQL", "Prompt Engineering",
+  "Java", "PythonAnywhere", "H2/SQL", "Prompt Engineering",
   "VS Code", "Android Studio", "Postman", "GitHub Copilot", "Three.js"
 ];
 
@@ -432,12 +432,12 @@ KASHIV`}
 
 function StatCounter({ target, suffix, label, isText, isDecimal }: { target: number; suffix: string; label: string; isText?: boolean; isDecimal?: boolean }) {
   const { count, ref } = useCountUp(target);
-  const display = isText ? suffix : isDecimal ? `${(count / 10).toFixed(1)}` : `${count}`;
+  const display = isText ? `${target}${suffix}` : isDecimal ? `${(8 + count / 10).toFixed(1)}` : `${count}`;
 
   return (
     <div ref={ref} className="text-center md:text-left">
       <div className="font-display text-3xl md:text-4xl font-bold text-foreground">
-        {display}<span className="text-primary text-lg md:text-xl">{suffix}</span>
+        {display}{!isText && suffix ? <span className="text-primary text-lg md:text-xl">{suffix}</span> : null}
       </div>
       <div className="text-[10px] md:text-xs text-muted-foreground font-mono uppercase tracking-wider mt-1">{label}</div>
     </div>
@@ -466,7 +466,7 @@ function AboutSection() {
             </Reveal>
             <Reveal>
               <p className="text-muted-foreground leading-relaxed">
-                My toolkit is practical by nature: <strong className="text-foreground">Spring Boot, REST APIs, Flask</strong> for backend work, <strong className="text-foreground">HTML/CSS/JavaScript/Tailwind</strong> for frontend, and a growing interest in Android development with Java and Kotlin. DSA and OOP aren't just coursework — they're how I think about every problem.
+                My toolkit is practical by nature: <strong className="text-foreground">Spring Boot, REST APIs, Flask</strong> for backend work, <strong className="text-foreground">HTML/CSS/JavaScript/Tailwind</strong> for frontend, and a growing interest in Android development with Java. DSA and OOP aren't just coursework — they're how I think about every problem.
               </p>
             </Reveal>
             <Reveal>
@@ -841,7 +841,7 @@ function CredentialsSection() {
 /* ─── Contact Section ─── */
 function ContactSection() {
   const [copied, setCopied] = useState(false);
-  const email = "padhaikaroli2007@gmail.com";
+  const email = "padhaikaroiit2007@gmail.com";
   const [formResult, setFormResult] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   const copyEmail = () => {
@@ -1007,7 +1007,7 @@ function Footer() {
             <a href="https://linkedin.com/in/divyansh-kashiv" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg glass hover:border-primary/30 transition-all">
               <Linkedin size={16} className="text-muted-foreground" />
             </a>
-            <a href="mailto:padhaikaroli2007@gmail.com" className="p-2 rounded-lg glass hover:border-primary/30 transition-all">
+            <a href="mailto:padhaikaroiit2007@gmail.com" className="p-2 rounded-lg glass hover:border-primary/30 transition-all">
               <Mail size={16} className="text-muted-foreground" />
             </a>
           </div>
