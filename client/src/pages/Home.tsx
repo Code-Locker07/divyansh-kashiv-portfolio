@@ -842,11 +842,38 @@ function CredentialsSection() {
 function ContactSection() {
   const [copied, setCopied] = useState(false);
   const email = "padhaikaroli2007@gmail.com";
+  const [formResult, setFormResult] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   const copyEmail = () => {
     navigator.clipboard.writeText(email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const onSubmitForm = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormResult("sending");
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "1e4479f9-cccd-40fe-8336-d50adf374fa9");
+    formData.append("subject", "New message from portfolio — {{name}}");
+    formData.append("from_name", (formData.get("name") as string) || "Portfolio Visitor");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
+      if (data.success) {
+        setFormResult("success");
+        e.currentTarget.reset();
+      } else {
+        setFormResult("error");
+      }
+    } catch {
+      setFormResult("error");
+    }
+    setTimeout(() => setFormResult("idle"), 4000);
   };
 
   return (
@@ -908,26 +935,44 @@ function ContactSection() {
           <Reveal>
             <div className="glass rounded-2xl p-8 space-y-6">
               <h3 className="font-display text-xl font-bold text-foreground">Send a message</h3>
-              <div className="space-y-4">
+              <form onSubmit={onSubmitForm} className="space-y-4">
                 <input
                   type="text"
+                  name="name"
+                  required
                   placeholder="Your name"
                   className="w-full px-4 py-3 rounded-lg glass text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-all"
                 />
                 <input
                   type="email"
+                  name="email"
+                  required
                   placeholder="your.email@example.com"
                   className="w-full px-4 py-3 rounded-lg glass text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-all"
                 />
                 <textarea
+                  name="message"
+                  required
                   placeholder="Your message..."
                   rows={5}
                   className="w-full px-4 py-3 rounded-lg glass text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-all resize-none"
                 />
-                <button className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity">
-                  Send Message →
+                <button
+                  type="submit"
+                  disabled={formResult === "sending"}
+                  className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {formResult === "sending" ? "Sending..." : "Send Message →"}
                 </button>
-              </div>
+                {formResult === "success" && (
+                  <p className="text-sm text-emerald font-medium flex items-center gap-2">
+                    <Check size={16} /> Message sent! I'll get back to you soon.
+                  </p>
+                )}
+                {formResult === "error" && (
+                  <p className="text-sm text-rose font-medium">Something went wrong. Please try again or email me directly.</p>
+                )}
+              </form>
             </div>
           </Reveal>
         </div>
