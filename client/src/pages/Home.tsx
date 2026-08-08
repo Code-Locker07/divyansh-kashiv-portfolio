@@ -307,10 +307,10 @@ function Navbar() {
 /* ─── Hero Section ─── */
 function HeroSection() {
   const stats = [
-    { target: 1, suffix: "st", label: "YEAR B.TECH", isText: true },
+    { target: 2, suffix: "nd", label: "YEAR B.TECH", isText: true },
     { target: 3, suffix: "+", label: "PROJECTS BUILT" },
-    { target: 50, suffix: "+", label: "DSA PROBLEMS" },
-    { target: 9, suffix: "", label: "CGPA (8.9)", isDecimal: true },
+    { target: 80, suffix: "+", label: "DSA PROBLEMS" },
+    { target: 6, suffix: "", label: "CGPA (8.6)", isDecimal: true },
   ];
 
   return (
