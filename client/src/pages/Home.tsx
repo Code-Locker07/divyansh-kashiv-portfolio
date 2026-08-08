@@ -309,7 +309,7 @@ function HeroSection() {
   const stats = [
     { target: 2, suffix: "nd", label: "YEAR B.TECH", isText: true },
     { target: 3, suffix: "+", label: "PROJECTS BUILT" },
-    { target: 80, suffix: "+", label: "DSA PROBLEMS" },
+    { target: 50, suffix: "+", label: "DSA PROBLEMS" },
     { target: 6, suffix: "", label: "CGPA (8.6)", isDecimal: true },
   ];
 
