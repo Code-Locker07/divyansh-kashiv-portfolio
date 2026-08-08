@@ -9,6 +9,7 @@ import { Moon, Sun, ArrowUp, Mail, Copy, Check, Github, Linkedin, Menu, X } from
 import { useState, useEffect, useRef } from "react";
 import SmokyText from "@/components/SmokyText";
 import GalleryTunnel from "@/components/GalleryTunnel";
+import SpecularButton from "@/components/SpecularButton";
 
 // Image URLs from generate_image
 const HERO_PHONE = "/manus-storage/dark-hero-phone_5a583c9b.png";
@@ -351,15 +352,49 @@ KASHIV`}
               I build Java and Android apps that solve real problems: banking systems, placement platforms, interactive portfolios, and games. B.Tech IT at NIET, exploring the full stack.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
-              <a href="#projects" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity">
+              <SpecularButton
+                lineColor="#00d4aa"
+                baseColor="#00d4aa"
+                textColor="#000000"
+                tint="#00d4aa"
+                tintOpacity={0.15}
+                autoAnimate={true}
+                intensity={1.2}
+                shineSize={12}
+                shineFade={50}
+                onClick={() => {
+                  const el = document.getElementById('projects');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 View the experiments →
-              </a>
-              <a href="/manus-storage/Divyansh_Kashiv_Resume_v2(1)_34c0b987.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 glass rounded-lg font-medium text-foreground hover:border-primary/30 transition-all">
-                <span>📄</span> Resume
-              </a>
-              <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 glass rounded-lg font-medium text-foreground hover:border-primary/30 transition-all">
-                <span>✉</span> Summon me
-              </a>
+              </SpecularButton>
+              <SpecularButton
+                lineColor="#ffffff"
+                baseColor="#333333"
+                textColor="#f5f5f5"
+                autoAnimate={true}
+                intensity={0.8}
+                size="lg"
+                href="/manus-storage/Divyansh_Kashiv_Resume_v2(1)_34c0b987.pdf"
+                target="_blank"
+              >
+                📄 Resume
+              </SpecularButton>
+              <SpecularButton
+                lineColor="#00d4aa"
+                baseColor="#222222"
+                textColor="#00d4aa"
+                autoAnimate={true}
+                intensity={0.9}
+                size="lg"
+                onClick={() => {
+                  const el = document.getElementById('contact');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                ✉ Summon me
+              </SpecularButton>
             </div>
           </div>
 
@@ -971,10 +1006,10 @@ export default function Home() {
       {/* Full-page Gallery Tunnel 3D Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <GalleryTunnel
-          background="#05080d"
-          lineColor="#1a3a5c"
-          lineOpacity={55}
-          colors={["#00d4aa", "#0099cc", "#006699", "#00d4aa", "#004466"]}
+          background="#030308"
+          lineColor="#6b21a8"
+          lineOpacity={85}
+          colors={["#a855f7", "#c084fc", "#7c3aed", "#e879f9", "#6b21a8"]}
           grid={4}
           speed={80}
           boost={120}
@@ -982,7 +1017,7 @@ export default function Home() {
           label={false}
         />
         {/* Subtle overlay so content remains readable */}
-        <div className="absolute inset-0 bg-background/50" />
+        <div className="absolute inset-0 bg-background/30" />
       </div>
       <div className="relative z-10">
         <Navbar />

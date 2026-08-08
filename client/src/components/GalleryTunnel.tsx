@@ -152,7 +152,7 @@ export default function GalleryTunnel(props: GalleryTunnelProps) {
           color: new THREE.Color(hex),
           side: THREE.DoubleSide,
           transparent: true,
-          opacity: 0.15,
+          opacity: 0.35,
         })
     );
 
