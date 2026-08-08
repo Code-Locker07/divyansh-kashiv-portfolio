@@ -209,7 +209,7 @@ const certifications = [
 
 const achievements = [
   { title: "Top 1,000 of 3,000+ teams", desc: "Vibe Hacks 2.0 Hackathon, HackWithIndia (2026)" },
-  { title: "50+ DSA problems", desc: "Solved on LeetCode in Java" },
+  { title: "80+ DSA problems", desc: "Solved on LeetCode in Java" },
   { title: "5 Job Simulations", desc: "JPMorgan, Walmart, EA, Deloitte, Mastercard" },
   { title: "3+ Projects", desc: "Built and deployed independently" },
 ];
@@ -309,7 +309,7 @@ function HeroSection() {
   const stats = [
     { target: 2, suffix: "nd", label: "YEAR B.TECH", isText: true },
     { target: 3, suffix: "+", label: "PROJECTS BUILT" },
-    { target: 50, suffix: "+", label: "DSA PROBLEMS" },
+    { target: 80, suffix: "+", label: "DSA PROBLEMS" },
     { target: 6, suffix: "", label: "CGPA (8.6)", isDecimal: true },
   ];
 
@@ -471,7 +471,7 @@ function AboutSection() {
             </Reveal>
             <Reveal>
               <p className="text-muted-foreground leading-relaxed">
-                Beyond the code, I've <strong className="text-foreground">completed 5+ industry job simulations</strong> (JPMorgan, Walmart, EA, Deloitte, Mastercard), ranked in the top 1,000 at Vibe Hacks 2.0, and solved 50+ DSA problems on LeetCode. I learn by building — and I build by shipping.
+                Beyond the code, I've <strong className="text-foreground">completed 5+ industry job simulations</strong> (JPMorgan, Walmart, EA, Deloitte, Mastercard), ranked in the top 1,000 at Vibe Hacks 2.0, and solved 80+ DSA problems on LeetCode. I learn by building — and I build by shipping.
               </p>
             </Reveal>
           </div>
