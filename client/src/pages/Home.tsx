@@ -101,7 +101,7 @@ const skillCategories = [
     { code: "H5", full: "HTML5", desc: "Web structure" },
     { code: "C3", full: "CSS3", desc: "Styling & layout" },
     { code: "Js", full: "JavaScript", desc: "Dynamic behavior" },
-    { code: "Tw", full: "Tailwind", desc: "Utility-first CSS" },
+    { code: "Jq", full: "Three.js", desc: "3D graphics & WebGL" },
   ]},
   { name: "Core CS", color: "violet", skills: [
     { code: "Ds", full: "DSA", desc: "Data structures & algos" },
@@ -413,7 +413,7 @@ KASHIV`}
                 <span className="text-rose font-bold">An</span> <span className="text-foreground/70">Android · Java</span>
               </div>
               <div className="absolute -bottom-4 -right-4 glass rounded-lg px-3 py-2 text-sm font-mono">
-                <span className="text-sky font-bold">Tw</span> <span className="text-foreground/70">Tailwind CSS</span>
+                <span className="text-sky font-bold">HTML</span> <span className="text-foreground/70">HTML5 · CSS3</span>
               </div>
             </div>
           </div>
@@ -466,7 +466,7 @@ function AboutSection() {
             </Reveal>
             <Reveal>
               <p className="text-muted-foreground leading-relaxed">
-                My toolkit is practical by nature: <strong className="text-foreground">Spring Boot, REST APIs, Flask</strong> for backend work, <strong className="text-foreground">HTML/CSS/JavaScript/Tailwind</strong> for frontend, and a growing interest in Android development with Java. DSA and OOP aren't just coursework — they're how I think about every problem.
+                My toolkit is practical by nature: <strong className="text-foreground">Spring Boot, REST APIs, Flask</strong> for backend work, <strong className="text-foreground">HTML/CSS/JavaScript</strong> for frontend, and a growing interest in Android development with Java. DSA and OOP aren't just coursework — they're how I think about every problem.
               </p>
             </Reveal>
             <Reveal>
@@ -1014,7 +1014,7 @@ function Footer() {
         </div>
         <div className="mt-8 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">© 2026 Divyansh Kashiv · Java Developer · Greater Noida, India</p>
-          <p className="text-xs text-muted-foreground">Built with React, Tailwind CSS, and zero frameworks — because sometimes simplicity ships faster.</p>
+          <p className="text-xs text-muted-foreground">Built with React, Three.js, and zero shortcuts — because sometimes simplicity ships faster.</p>
         </div>
       </div>
     </footer>
