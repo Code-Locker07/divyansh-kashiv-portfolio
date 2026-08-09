@@ -8,7 +8,7 @@ import { useTheme } from "@/contexts/ThemeContext";
 import { Moon, Sun, ArrowUp, Mail, Copy, Check, Github, Linkedin, Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import SmokyText from "@/components/SmokyText";
-import Interactive3DPhone from "@/components/Interactive3DPhone";
+import IphoneMockup from "@/components/IphoneMockup";
 import GalleryTunnel from "@/components/GalleryTunnel";
 import SpecularButton from "@/components/SpecularButton";
 
@@ -402,20 +402,7 @@ KASHIV`}
           {/* Right: Interactive 3D Phone + floating badges */}
           <div className="flex-1 flex justify-center lg:justify-end relative">
             <div className="relative w-full max-w-md">
-              <Interactive3DPhone />
-              {/* Floating tech badges */}
-              <div className="absolute -top-2 -right-6 glass rounded-lg px-3 py-2 text-sm font-mono glow-teal">
-                <span className="text-primary font-bold">Ja</span> <span className="text-foreground/70">Java · Primary</span>
-              </div>
-              <div className="absolute top-[25%] -left-10 glass rounded-lg px-3 py-2 text-sm font-mono">
-                <span className="text-emerald font-bold">Sb</span> <span className="text-foreground/70">Spring Boot</span>
-              </div>
-              <div className="absolute bottom-[30%] -left-8 glass rounded-lg px-3 py-2 text-sm font-mono">
-                <span className="text-rose font-bold">An</span> <span className="text-foreground/70">Android · Java</span>
-              </div>
-              <div className="absolute -bottom-4 -right-4 glass rounded-lg px-3 py-2 text-sm font-mono">
-                <span className="text-sky font-bold">HTML</span> <span className="text-foreground/70">HTML5 · CSS3</span>
-              </div>
+              <IphoneMockup />
             </div>
           </div>
         </div>
