@@ -8,6 +8,7 @@ import { useTheme } from "@/contexts/ThemeContext";
 import { Moon, Sun, ArrowUp, Mail, Copy, Check, Github, Linkedin, Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import SmokyText from "@/components/SmokyText";
+import Interactive3DPhone from "@/components/Interactive3DPhone";
 import GalleryTunnel from "@/components/GalleryTunnel";
 import SpecularButton from "@/components/SpecularButton";
 
@@ -398,10 +399,10 @@ KASHIV`}
             </div>
           </div>
 
-          {/* Right: Phone mockup + floating badges */}
+          {/* Right: Interactive 3D Phone + floating badges */}
           <div className="flex-1 flex justify-center lg:justify-end relative">
-            <div className="relative">
-              <img src={HERO_PHONE} alt="Portfolio Dashboard" className="w-64 md:w-72 drop-shadow-[0_20px_60px_rgba(0,212,170,0.15)]" />
+            <div className="relative w-full max-w-md">
+              <Interactive3DPhone />
               {/* Floating tech badges */}
               <div className="absolute -top-2 -right-6 glass rounded-lg px-3 py-2 text-sm font-mono glow-teal">
                 <span className="text-primary font-bold">Ja</span> <span className="text-foreground/70">Java · Primary</span>
