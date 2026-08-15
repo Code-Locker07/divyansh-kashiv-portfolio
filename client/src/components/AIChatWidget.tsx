@@ -92,8 +92,8 @@ export default function AIChatWidget() {
         {/* Main button */}
         <div className={`relative w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ease-out ${
           isOpen 
-            ? "bg-purple-800 shadow-md shadow-red-900/20"
-            : "bg-purple-700 shadow-md shadow-purple-900/30 hover:bg-purple-600 hover:scale-105"
+            ? "bg-gray-800 shadow-none"
+            : "bg-gray-700 shadow-none hover:bg-gray-600 hover:scale-105"
         }`}>
           {isOpen ? (
             <X size={22} className="text-white" />
@@ -107,8 +107,8 @@ export default function AIChatWidget() {
       {isOpen && (
         <div className="fixed bottom-24 right-6 z-50 w-[380px] max-w-[calc(100vw-2rem)] h-[500px] rounded-2xl border border-purple-500/30 bg-[#0a0b14]/95 backdrop-blur-xl shadow-2xl shadow-purple-900/30 flex flex-col overflow-hidden">
           {/* Header */}
-          <div className="flex items-center gap-3 px-4 py-3 border-b border-purple-500/20 bg-gradient-to-r from-purple-900/40 to-teal-900/20">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-teal-500 flex items-center justify-center">
+          <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-700/50 bg-[#0f1019]">
+            <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center">
               <Bot size={18} className="text-white" />
             </div>
             <div className="flex-1">
@@ -116,7 +116,7 @@ export default function AIChatWidget() {
                 Divyansh's AI Assistant
               </h3>
               <p className="text-xs text-teal-400 flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                 Online
               </p>
             </div>
