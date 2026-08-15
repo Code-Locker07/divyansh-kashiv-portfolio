@@ -11,6 +11,7 @@ import SmokyText from "@/components/SmokyText";
 import IphoneMockup from "@/components/IphoneMockup";
 import GalleryTunnel from "@/components/GalleryTunnel";
 import SpecularButton from "@/components/SpecularButton";
+import AIChatWidget from "@/components/AIChatWidget";
 
 // Image URLs from generate_image
 const HERO_PHONE = "/manus-storage/dark-hero-phone_5a583c9b.png";
@@ -1066,6 +1067,7 @@ export default function Home() {
         <Footer />
       </div>
       <ScrollToTop />
+      <AIChatWidget />
     </div>
   );
 }
