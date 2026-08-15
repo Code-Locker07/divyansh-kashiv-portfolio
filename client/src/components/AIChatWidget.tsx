@@ -92,8 +92,8 @@ export default function AIChatWidget() {
         {/* Main button */}
         <div className={`relative w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ease-out ${
           isOpen 
-            ? "bg-gradient-to-r from-red-600 to-purple-600 shadow-lg shadow-red-500/30"
-            : "bg-gradient-to-r from-purple-600 to-teal-500 shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-105"
+            ? "bg-gradient-to-r from-red-600 to-purple-600 shadow-md shadow-red-900/20"
+            : "bg-gradient-to-r from-purple-600 to-teal-500 shadow-md shadow-purple-900/20 hover:scale-105"
         }`}>
           {isOpen ? (
             <X size={22} className="text-white" />
