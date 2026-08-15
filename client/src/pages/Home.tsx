@@ -1023,7 +1023,7 @@ function ScrollToTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className={`fixed bottom-24 md:bottom-6 right-6 z-50 p-3 rounded-full bg-primary text-primary-foreground shadow-[0_0_20px_rgba(0,212,170,0.3)] hover:opacity-90 transition-all ${
+      className={`fixed bottom-24 md:bottom-6 right-6 z-50 p-3 rounded-full bg-gray-800 text-gray-300 hover:bg-gray-700 transition-all ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
       aria-label="Back to top"
