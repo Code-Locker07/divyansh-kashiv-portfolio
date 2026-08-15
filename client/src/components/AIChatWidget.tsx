@@ -89,10 +89,6 @@ export default function AIChatWidget() {
         className="fixed bottom-4 right-4 z-50 group"
         aria-label={isOpen ? "Close chat" : "Open AI chat"}
       >
-        {/* Outer glow pulse ring */}
-        {!isOpen && (
-          <span className="absolute inset-0 rounded-full bg-purple-500/30 animate-ping" style={{ animationDuration: "2s" }} />
-        )}
         {/* Main button */}
         <div className={`relative w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ease-out ${
           isOpen 
