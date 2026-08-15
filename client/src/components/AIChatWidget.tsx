@@ -86,41 +86,25 @@ export default function AIChatWidget() {
       {/* Chat Toggle Button - Animated Code Logo */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 group"
+        className="fixed bottom-4 right-4 z-50 group"
         aria-label={isOpen ? "Close chat" : "Open AI chat"}
       >
         {/* Outer glow pulse ring */}
         {!isOpen && (
-          <>
-            <span className="absolute inset-0 rounded-full bg-purple-500/30 animate-ping" style={{ animationDuration: "2s" }} />
-            <span className="absolute inset-[-4px] rounded-full bg-gradient-to-r from-purple-500/20 to-teal-500/20 animate-pulse" style={{ animationDuration: "3s" }} />
-          </>
+          <span className="absolute inset-0 rounded-full bg-purple-500/30 animate-ping" style={{ animationDuration: "2s" }} />
         )}
         {/* Main button */}
-        <div className={`relative w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 ease-out ${
+        <div className={`relative w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ease-out ${
           isOpen 
-            ? "bg-gradient-to-r from-red-600 to-purple-600 shadow-lg shadow-red-500/30 rotate-0"
-            : "bg-gradient-to-r from-purple-600 via-violet-600 to-teal-500 shadow-xl shadow-purple-500/40 hover:shadow-purple-500/60 hover:scale-110 hover:-rotate-6 animate-float"
+            ? "bg-gradient-to-r from-red-600 to-purple-600 shadow-lg shadow-red-500/30"
+            : "bg-gradient-to-r from-purple-600 to-teal-500 shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-105"
         }`}>
-          {/* Glassmorphic inner layer */}
-          <div className="absolute inset-[2px] rounded-[14px] bg-white/10 backdrop-blur-sm" />
           {isOpen ? (
-            <X size={24} className="text-white relative z-10 transition-transform duration-200" />
+            <X size={22} className="text-white" />
           ) : (
-            <div className="relative z-10 flex flex-col items-center justify-center">
-              <Terminal size={20} className="text-white" />
-              <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-teal-400 rounded-full animate-pulse shadow-lg shadow-teal-400/50" />
-            </div>
+            <MessageSquare size={22} className="text-white" />
           )}
         </div>
-        {/* Floating code symbols */}
-        {!isOpen && (
-          <div className="absolute inset-0 pointer-events-none">
-            <span className="absolute -top-2 left-1/2 -translate-x-1/2 text-purple-400/60 text-xs font-mono animate-float-fast">&lt;/&gt;</span>
-            <span className="absolute top-1/2 -left-3 -translate-y-1/2 text-teal-400/50 text-xs font-mono animate-float-slow">{'{'}</span>
-            <span className="absolute top-1/2 -right-3 -translate-y-1/2 text-teal-400/50 text-xs font-mono animate-float-slow" style={{ animationDelay: "0.5s" }}>{'}'}</span>
-          </div>
-        )}
       </button>
 
       {/* Chat Panel */}
