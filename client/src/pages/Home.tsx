@@ -914,9 +914,7 @@ function ContactSection() {
               <a href="https://linkedin.com/in/divyansh-kashiv" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-3 bg-[#0077B5] text-white rounded-lg font-medium hover:opacity-90 transition-opacity">
                 <Linkedin size={18} /> LinkedIn
               </a>
-              <a href="https://leetcode.com/u/DivyanshKashiv07/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-3 bg-[#FFA116] text-white rounded-lg font-medium hover:opacity-90 transition-opacity">
-                <span className="font-bold text-sm">LC</span> LeetCode
-              </a>
+
             </div>
           </Reveal>
 
